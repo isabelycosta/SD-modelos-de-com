@@ -1,1 +1,2 @@
-# SD-modelos-de-com
+# codigosSD
+Códigos iniciais dos projetos de SD
