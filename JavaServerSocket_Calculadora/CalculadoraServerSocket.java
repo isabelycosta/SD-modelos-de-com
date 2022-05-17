@@ -10,7 +10,7 @@ public class CalculadoraServerSocket {
 
 	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NumberFormatException, Exception {
 		// TODO Auto-generated method stub
 		ServerSocket welcomeSocket;
 		DataOutputStream socketOutput;     	
@@ -19,14 +19,14 @@ public class CalculadoraServerSocket {
 	    Calculadora calc = new Calculadora();
 		try {
 			welcomeSocket = new ServerSocket(9090);
-		  int i=0; //número de clientes
+		  int i=0; //nï¿½mero de clientes
 	  
 	      System.out.println ("Servidor no ar");
 	      while(true) { 
 	  
 	           Socket connectionSocket = welcomeSocket.accept(); 
 	           i++;
-	           System.out.println ("Nova conexão");
+	           System.out.println ("Nova conexï¿½o");
 	           
 	           //Interpretando dados do servidor
 	           socketEntrada = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
@@ -34,8 +34,17 @@ public class CalculadoraServerSocket {
                String oper1=socketEntrada.readLine();
                String oper2=socketEntrada.readLine();
                
+			   String result= "";
                //Chamando a calculadora
-               String result= ""+calc.soma(Double.parseDouble(oper1),Double.parseDouble(oper2));
+			   //1-somar 2-subtrair 3-dividir 4-multiplicar
+			   if(operacao.equals("1"))
+               	result += calc.somar(Double.parseDouble(oper1),Double.parseDouble(oper2));
+			   else if(operacao.equals("2"))
+			    result += calc.subtrair(Double.parseDouble(oper1),Double.parseDouble(oper2));
+			   else if(operacao.equals("3"))
+			   	result += calc.multiplicar(Double.parseDouble(oper1),Double.parseDouble(oper2));
+			   else if(operacao.equals("4"))
+			    result += calc.dividir(Double.parseDouble(oper1),Double.parseDouble(oper2));
                
                //Enviando dados para o servidor
                socketOutput= new DataOutputStream(connectionSocket.getOutputStream());     	

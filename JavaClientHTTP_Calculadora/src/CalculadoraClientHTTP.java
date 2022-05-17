@@ -5,18 +5,43 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.URL;
+import java.util.Scanner;
 
 import javax.net.ssl.HttpsURLConnection;
 
 public class CalculadoraClientHTTP {
 
 	public static void main(String[] args) {
-		
-	String result="";
-    try {
+        try {
+           
+            int oper1, oper2, operacao;
+            Scanner scanner = new Scanner(System.in);
+            
+            System.out.println ("Digite o primeiro valor");
+            oper1 = scanner.nextInt();
+            System.out.println ("Digite o segundo valor");
+            oper2 = scanner.nextInt();
 
-       URL url = new URL("https://double-nirvana-273602.appspot.com/?hl=pt-BR");
-       HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+            System.out.println ("Agora digite a operacao");
+            System.out.println ("Digite 1 para somar");
+            System.out.println ("Digite 2 para subtrair");
+            System.out.println ("Digite 3 para multipliclar");
+            System.out.println ("Digite 4 para dividir");
+
+            
+            operacao = scanner.nextInt();
+            DoHttpPostRequest(oper1, oper2,operacao);
+            scanner.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+    public static void DoHttpPostRequest(int valor1, int valor2, int operacao) throws IOException
+    {
+        
+        URL url = new URL("https://double-nirvana-273602.appspot.com/?hl=pt-BR");
+        HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
         conn.setReadTimeout(10000);
         conn.setConnectTimeout(15000);
         conn.setRequestMethod("POST");
@@ -27,17 +52,13 @@ public class CalculadoraClientHTTP {
         OutputStream os = conn.getOutputStream();
         BufferedWriter writer = new BufferedWriter(
                 new OutputStreamWriter(os, "UTF-8"));
-        writer.write("oper1=15&oper2=15&operacao=3"); //1-somar 2-subtrair 3-dividir 4-multiplicar
+        writer.write("oper1=" + valor1 + "&oper2=" + valor2 + "&operacao=" + operacao); //1-somar 2-subtrair 3-dividir 4-multiplicar
         writer.flush();
         writer.close();
         os.close();
 
         int responseCode=conn.getResponseCode();
         if (responseCode == HttpsURLConnection.HTTP_OK) {
-
-            //RECBIMENTO DOS PARAMETROS
-
-
             BufferedReader br = new BufferedReader(
                     new InputStreamReader(conn.getInputStream(), "utf-8"));
             StringBuilder response = new StringBuilder();
@@ -45,11 +66,17 @@ public class CalculadoraClientHTTP {
             while ((responseLine = br.readLine()) != null) {
                 response.append(responseLine.trim());
             }
-            result = response.toString();
-            System.out.println("Resposta do Servidor PHP="+result);
+            System.out.println("Resposta do Servidor PHP="+response.toString());
+            return; 
         }
-    } catch (IOException e) {
-        e.printStackTrace();
+        else if(responseCode == HttpsURLConnection.HTTP_BAD_REQUEST){
+            System.out.println("Erro de cliente, cheque os parâmetros enviados!!");
+        }
+        else if(responseCode == HttpsURLConnection.HTTP_INTERNAL_ERROR){
+            System.out.println("Erro no servidor!!");
+        }
+        else{
+            System.out.println("Erro inesperado!!");
+        }
     }
-	}
 }

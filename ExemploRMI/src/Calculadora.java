@@ -16,6 +16,24 @@ public class Calculadora  implements ICalculadora {
 		return a + b;
 	}
 
+	@Override
+	public int subtrair(int a, int b) throws RemoteException {
+		System.out.println("Método subtrair chamado " + chamadas++);
+		return a - b;
+	}
+
+	@Override
+	public int multiplicar(int a, int b) throws RemoteException {
+		System.out.println("Método multiplicar chamado " + chamadas++);
+		return a * b;
+	}
+
+	@Override
+	public int dividir(int a, int b) throws RemoteException {
+		System.out.println("Método dividir chamado " + chamadas++);
+		return a / b;
+	}
+
 	public static void main(String[] args) throws AccessException, RemoteException, AlreadyBoundException  {
 		Calculadora calculadora = new Calculadora();		
 		Registry reg = null;
@@ -33,4 +51,6 @@ public class Calculadora  implements ICalculadora {
 		}
 		reg.rebind("calculadora", stub);
 	}
+
+	
 }
