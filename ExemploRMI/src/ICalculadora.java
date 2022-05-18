@@ -1,6 +1,6 @@
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-
+//Interface contendo os métodos que serão fornecidos por nosso objeto remoto. 
 public interface ICalculadora extends Remote{
 
 	public int soma(int a, int b) throws RemoteException;
