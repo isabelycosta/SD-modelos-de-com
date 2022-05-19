@@ -8,18 +8,17 @@ import java.util.Scanner;
 public class CalculadoraClientSocket {
 
 	public static void main(String[] args) {
-		
-		// TODO Auto-generated method stub
 		double oper1=10,oper2=20;
 		int operacao=2; //1-somar 2-subtrair 3-dividir 4-multiplicar
 		String result="";
         try {
             System.out.println ("Cliente rodando");
-        	//Conex�o com o Servidor
+        	//Conexão com o Servidor
             Socket clientSocket = new Socket("localhost", 9090);
             DataOutputStream socketSaidaServer = new DataOutputStream(clientSocket.getOutputStream());
             Scanner scanner = new Scanner(System.in);
             
+            //Entrada de dados para a realização das operações
             System.out.println ("Digite o primeiro valor");
             oper1 = scanner.nextDouble();
             System.out.println ("Digite o segundo valor");
@@ -34,13 +33,13 @@ public class CalculadoraClientSocket {
             
             operacao = scanner.nextInt();
 
-            //Enviando os dados
+            //Enviando os dados para o servidor
             socketSaidaServer.writeBytes(operacao+"\n");
             socketSaidaServer.writeBytes(oper1+ "\n");
             socketSaidaServer.writeBytes( oper2+ "\n");
             socketSaidaServer.flush();
 
-            //Recebendo a resposta
+            //Recebendo a resposta do servidor socket
             BufferedReader messageFromServer = new BufferedReader
                     (new InputStreamReader(clientSocket.getInputStream()));
             result=messageFromServer.readLine();
