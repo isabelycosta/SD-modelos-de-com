@@ -16,7 +16,7 @@ public class CalculadoraClientHTTP {
            
             int oper1, oper2, operacao;
             Scanner scanner = new Scanner(System.in);
-            
+            //Entrada de dados para realização das operações
             System.out.println ("Digite o primeiro valor");
             oper1 = scanner.nextInt();
             System.out.println ("Digite o segundo valor");
@@ -37,13 +37,16 @@ public class CalculadoraClientHTTP {
             e.printStackTrace();
         }
 	}
+
+    //Método para abstrair a requisição HTTP Post para o servidor com a implementação da Calculador
     public static void DoHttpPostRequest(int valor1, int valor2, int operacao) throws IOException
     {
-        
+        //URL do servidor
         URL url = new URL("https://double-nirvana-273602.appspot.com/?hl=pt-BR");
         HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
         conn.setReadTimeout(10000);
         conn.setConnectTimeout(15000);
+        //Método HTTP usado
         conn.setRequestMethod("POST");
         conn.setDoInput(true);
         conn.setDoOutput(true) ;
@@ -58,6 +61,7 @@ public class CalculadoraClientHTTP {
         os.close();
 
         int responseCode=conn.getResponseCode();
+        //Tratamento em caso de sucesso da requisição (STATUS CODE 200)
         if (responseCode == HttpsURLConnection.HTTP_OK) {
             BufferedReader br = new BufferedReader(
                     new InputStreamReader(conn.getInputStream(), "utf-8"));
@@ -69,12 +73,15 @@ public class CalculadoraClientHTTP {
             System.out.println("Resposta do Servidor PHP="+response.toString());
             return; 
         }
+        //Tratamento em caso de falha do lado cliente (STATUS CODE 400)
         else if(responseCode == HttpsURLConnection.HTTP_BAD_REQUEST){
             System.out.println("Erro de cliente, cheque os parâmetros enviados!!");
         }
+        //Tratamento em caso de falha do lado servidor (STATUS CODE 500)
         else if(responseCode == HttpsURLConnection.HTTP_INTERNAL_ERROR){
             System.out.println("Erro no servidor!!");
         }
+        //Tratamento em caso de um falha desconhecida (nenhum dos STATUS CODE tratados anteriormente)
         else{
             System.out.println("Erro inesperado!!");
         }

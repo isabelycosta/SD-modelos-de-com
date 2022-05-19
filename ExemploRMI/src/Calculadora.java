@@ -11,7 +11,7 @@ public class Calculadora  implements ICalculadora {
 	
 	private static int chamadas = 0;
 
-	//Apenas a implementação dos métodos fornecidos por nossa interface remota.
+	//Implementação dos métodos fornecidos por nossa interface remota.
 	public int soma(int a, int b) throws RemoteException {
 		System.out.println("Método soma chamado " + chamadas++);
 		return a + b;

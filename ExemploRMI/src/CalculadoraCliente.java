@@ -19,7 +19,7 @@ public class CalculadoraCliente {
 
 			Scanner scanner = new Scanner(System.in);
             while(true){
-				//Apenas a captura das entradas para nosso cliente funcionar
+				//Captura das entradas para nosso cliente funcionar
 				System.out.println ("Digite o primeiro valor");
 				oper1 = scanner.nextInt();
 				System.out.println ("Digite o segundo valor");
