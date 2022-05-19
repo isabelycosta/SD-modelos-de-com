@@ -11,27 +11,34 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class CalculadoraClientHTTP {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
         try {
            
             int oper1, oper2, operacao;
             Scanner scanner = new Scanner(System.in);
-            //Entrada de dados para realização das operações
-            System.out.println ("Digite o primeiro valor");
-            oper1 = scanner.nextInt();
-            System.out.println ("Digite o segundo valor");
-            oper2 = scanner.nextInt();
+            while(true){
+                //Entrada de dados para realização das operações
+                System.out.println ("Digite o primeiro valor");
+                oper1 = scanner.nextInt();
+                System.out.println ("Digite o segundo valor");
+                oper2 = scanner.nextInt();
 
-            System.out.println ("Agora digite a operacao");
-            System.out.println ("Digite 1 para somar");
-            System.out.println ("Digite 2 para subtrair");
-            System.out.println ("Digite 3 para multipliclar");
-            System.out.println ("Digite 4 para dividir");
+                System.out.println ("Agora digite a operacao");
+                System.out.println ("Digite 1 para somar");
+                System.out.println ("Digite 2 para subtrair");
+                System.out.println ("Digite 3 para multipliclar");
+                System.out.println ("Digite 4 para dividir");
+                System.out.println ("Digite 0 para sair");
 
+
+                operacao = scanner.nextInt();
+                if(operacao == 0)
+                    break;
+                DoHttpPostRequest(oper1, oper2,operacao);
+                //Fazendo um delay para aguardar a resposta do servidor
+                Thread.sleep(2000);
+            }
             
-            operacao = scanner.nextInt();
-            DoHttpPostRequest(oper1, oper2,operacao);
-            scanner.close();
 
         } catch (IOException e) {
             e.printStackTrace();

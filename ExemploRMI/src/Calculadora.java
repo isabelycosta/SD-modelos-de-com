@@ -41,6 +41,7 @@ public class Calculadora  implements ICalculadora {
 		ICalculadora stub = (ICalculadora) UnicastRemoteObject.
 				exportObject(calculadora, 1100);
 		try {
+			System.out.println("Servidor!!");
 			System.out.println("Creating registry...");
 			//Criação do serviço de nomes onde registraremos nosso objeto remoto
 			reg = LocateRegistry.createRegistry(1099);

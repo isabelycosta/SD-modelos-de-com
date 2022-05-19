@@ -12,6 +12,7 @@ public class CalculadoraCliente {
 		ICalculadora calc;
 		int oper1, oper2, operacao;		
 		try {
+			System.out.println("Cliente!!");
 			//Faz a recuperação do nosso serviço de nomes
 			reg = LocateRegistry.getRegistry(1099);
 			//Recupera o objeto registrado no servidor, através do mesmo nome dado na hora de realizar o registro
@@ -30,23 +31,24 @@ public class CalculadoraCliente {
 				System.out.println ("Digite 2 para subtrair");
 				System.out.println ("Digite 3 para multipliclar");
 				System.out.println ("Digite 4 para dividir");
+				System.out.println ("Digite 0 para sair");
 	
 				
 				operacao = scanner.nextInt();
 				//A partir da operação digitada pelo cliente, é realizado uma operação matemática em nosso objeto remoto, através da definição da interface remota. 
 				if(operacao==1){
-					System.out.println(calc.soma(oper1, oper2));
+					System.out.println("resultado = " + calc.soma(oper1, oper2));
 				}
 				if(operacao==2){
-					System.out.println(calc.subtrair(oper1, oper2));
+					System.out.println("resultado = " + calc.subtrair(oper1, oper2));
 				}
 				if(operacao==3){
-					System.out.println(calc.multiplicar(oper1, oper2));
+					System.out.println("resultado = " + calc.multiplicar(oper1, oper2));
 				}
 				if(operacao==4){
-					System.out.println(calc.dividir(oper1, oper2));
+					System.out.println("resultado = " + calc.dividir(oper1, oper2));
 				}
-				else {
+				if(operacao==0) {
 					break;
 				}
 			}
