@@ -9,6 +9,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class CalculadoraSocket extends AsyncTask<Void, Void, String> {
 
@@ -31,35 +32,133 @@ public class CalculadoraSocket extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... voids) {
         String result="";
+        Scanner s = new Scanner(System.in);
         //double oper1=10,oper2=20;
-        int operacao=1; //1-somar 2-subtrair 3-dividir 4-multiplicar
+        int operacao=1, operacaosub=2, operacaodiv=3, operacaomult=4 ; //somar
+        // 1 - somar, 2 - subtrair, 3- dividir e 4 - multiplicar
+
+
         try {
+
+            BufferedReader messageFromServer1 = null;
 
             //Conexão com o Servidor
             Socket clientSocket = new Socket("192.168.0.11", 9090);
             DataOutputStream socketSaidaServer = new DataOutputStream(clientSocket.getOutputStream());
+            messageFromServer1 = new BufferedReader
+                    (new InputStreamReader(clientSocket.getInputStream()));
 
-            //Enviando os dados
+            //operação de soma
             socketSaidaServer.writeBytes(operacao+"\n");
             socketSaidaServer.writeBytes(oper1+ "\n");
             socketSaidaServer.writeBytes( oper2+ "\n");
             socketSaidaServer.flush();
 
+
             //Recebendo a resposta
             BufferedReader messageFromServer = new BufferedReader
                     (new InputStreamReader(clientSocket.getInputStream()));
             result=messageFromServer.readLine();
-
-          //  System.out.println("resultado="+result);
+            //  System.out.println("resultado="+result);
             clientSocket.close();
+
+            return result;
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        try {
+
+            BufferedReader messageFromServer1 = null;
+
+            //Conexão com o Servidor
+            Socket clientSocket = new Socket("192.168.0.11", 9090);
+            DataOutputStream socketSaidaServer = new DataOutputStream(clientSocket.getOutputStream());
+            messageFromServer1 = new BufferedReader
+                    (new InputStreamReader(clientSocket.getInputStream()));
+
+            //operação de subtração
+            socketSaidaServer.writeBytes(operacaosub+"\n");
+            socketSaidaServer.writeBytes(oper1+ "\n");
+            socketSaidaServer.writeBytes( oper2+ "\n");
+            socketSaidaServer.flush();
+
+
+            //Recebendo a resposta
+            BufferedReader messageFromServer = new BufferedReader
+                    (new InputStreamReader(clientSocket.getInputStream()));
+            result=messageFromServer.readLine();
+            //  System.out.println("resultado="+result);
+            clientSocket.close();
+
+            return result;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+
+            BufferedReader messageFromServer1 = null;
+
+            //Conexão com o Servidor
+            Socket clientSocket = new Socket("192.168.0.11", 9090);
+            DataOutputStream socketSaidaServer = new DataOutputStream(clientSocket.getOutputStream());
+            messageFromServer1 = new BufferedReader
+                    (new InputStreamReader(clientSocket.getInputStream()));
+
+            //operação de divisão
+            socketSaidaServer.writeBytes(operacaodiv+"\n");
+            socketSaidaServer.writeBytes(oper1+ "\n");
+            socketSaidaServer.writeBytes( oper2+ "\n");
+            socketSaidaServer.flush();
+
+
+            //Recebendo a resposta
+            BufferedReader messageFromServer = new BufferedReader
+                    (new InputStreamReader(clientSocket.getInputStream()));
+            result=messageFromServer.readLine();
+            //  System.out.println("resultado="+result);
+            clientSocket.close();
+
+            return result;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+
+            BufferedReader messageFromServer1 = null;
+
+            //Conexão com o Servidor
+            Socket clientSocket = new Socket("192.168.0.11", 9090);
+            DataOutputStream socketSaidaServer = new DataOutputStream(clientSocket.getOutputStream());
+            messageFromServer1 = new BufferedReader
+                    (new InputStreamReader(clientSocket.getInputStream()));
+
+            //operação de multiplicação
+            socketSaidaServer.writeBytes(operacaomult+"\n");
+            socketSaidaServer.writeBytes(oper1+ "\n");
+            socketSaidaServer.writeBytes( oper2+ "\n");
+            socketSaidaServer.flush();
+
+
+            //Recebendo a resposta
+            BufferedReader messageFromServer = new BufferedReader
+                    (new InputStreamReader(clientSocket.getInputStream()));
+            result=messageFromServer.readLine();
+            //  System.out.println("resultado="+result);
+            clientSocket.close();
+
+            return result;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return result;
-        //Codigo
     }
 
 
