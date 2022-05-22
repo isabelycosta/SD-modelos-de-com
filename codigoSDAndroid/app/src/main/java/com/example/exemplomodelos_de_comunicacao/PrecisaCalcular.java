@@ -33,6 +33,18 @@ public class PrecisaCalcular {
 
     }
 
+    public void calculoRemotoHTTPmult(){
+        CalculadoraHttpPOST shs = new CalculadoraHttpPOST(this, "3", "15", "15");
+        shs.execute();
+
+    }
+
+    public void calculoRemotoHTTPdiv(){
+        CalculadoraHttpPOST shs = new CalculadoraHttpPOST(this, "4", "15", "15");
+        shs.execute();
+
+    }
+
     public void result_calculoRemoto(String result){
         tv.setText(result);
     }

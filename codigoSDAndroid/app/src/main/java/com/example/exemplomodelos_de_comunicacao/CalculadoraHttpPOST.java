@@ -94,7 +94,6 @@ public class CalculadoraHttpPOST extends AsyncTask<Void, Void, String> {
 
             case 2:
                 try {
-
                     //cria url
                     URL url = new URL("https://double-nirvana-273602.appspot.com/?hl=pt-BR");
                     HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
@@ -141,13 +140,100 @@ public class CalculadoraHttpPOST extends AsyncTask<Void, Void, String> {
 
                 return result;
                 //break;
-            //case 3:
-                //result = ""+ calc.multiplicacao(Double.parseDouble(oper1),Double.parseDouble(oper2));
-               // break;
-          //  case 4:
-              //  result = ""+ calc.divisao(Double.parseDouble(oper1),Double.parseDouble(oper2));
-               // break;
+            case 3:
+                try {
+                    //cria url
+                    URL url = new URL("https://double-nirvana-273602.appspot.com/?hl=pt-BR");
+                    HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+                    //timeout de leitura
+                    conn.setReadTimeout(10000);
+                    //timeout de conexão
+                    conn.setConnectTimeout(15000);
+                    //método para envio dos dados
+                    conn.setRequestMethod("POST");
+                    conn.setDoInput(true);
+                    //envio de solicitação
+                    conn.setDoOutput(true) ;
 
+                    //ENVIO DOS PARAMETROS
+                    OutputStream os = conn.getOutputStream();
+                    BufferedWriter writer = new BufferedWriter(
+                            new OutputStreamWriter(os, "UTF-8"));
+                    writer.write("oper1="+oper1+"&oper2="+oper2+"&operacao=3");
+                    writer.flush();
+                    writer.close();
+                    os.close();
+
+                    //armazenamento do retorno da requisição
+                    int responseCode=conn.getResponseCode();
+                    //verifica se a requisição foi OK
+                    if (responseCode == HttpsURLConnection.HTTP_OK) {
+
+                        //RECBIMENTO DOS PARAMETROS
+
+
+                        BufferedReader br = new BufferedReader(
+                                new InputStreamReader(conn.getInputStream(), "utf-8"));
+                        StringBuilder response = new StringBuilder();
+                        String responseLine = null;
+                        while ((responseLine = br.readLine()) != null) {
+                            response.append(responseLine.trim());
+                        }
+                        //resposta para String
+                        result = response.toString();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                return result;
+            case 4:
+                try {
+                    //cria url
+                    URL url = new URL("https://double-nirvana-273602.appspot.com/?hl=pt-BR");
+                    HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+                    //timeout de leitura
+                    conn.setReadTimeout(10000);
+                    //timeout de conexão
+                    conn.setConnectTimeout(15000);
+                    //método para envio dos dados
+                    conn.setRequestMethod("POST");
+                    conn.setDoInput(true);
+                    //envio de solicitação
+                    conn.setDoOutput(true) ;
+
+                    //ENVIO DOS PARAMETROS
+                    OutputStream os = conn.getOutputStream();
+                    BufferedWriter writer = new BufferedWriter(
+                            new OutputStreamWriter(os, "UTF-8"));
+                    writer.write("oper1="+oper1+"&oper2="+oper2+"&operacao=4");
+                    writer.flush();
+                    writer.close();
+                    os.close();
+
+                    //armazenamento do retorno da requisição
+                    int responseCode=conn.getResponseCode();
+                    //verifica se a requisição foi OK
+                    if (responseCode == HttpsURLConnection.HTTP_OK) {
+
+                        //RECBIMENTO DOS PARAMETROS
+
+
+                        BufferedReader br = new BufferedReader(
+                                new InputStreamReader(conn.getInputStream(), "utf-8"));
+                        StringBuilder response = new StringBuilder();
+                        String responseLine = null;
+                        while ((responseLine = br.readLine()) != null) {
+                            response.append(responseLine.trim());
+                        }
+                        //resposta para String
+                        result = response.toString();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                return result;
            // default:
               //  System.out.println("Digite SOMENTE números entre 1 e 4");
                 //break;
