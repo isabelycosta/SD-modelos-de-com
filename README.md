@@ -23,8 +23,8 @@ Projeto da disciplina de sistemas distribuídos tendo as seguintes implementaç�
     <td align="center"><a href="https://github.com/isabelycosta"> <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/31971965?v=4" width="100px;" alt=""/> <br /> <sub><b>Isabely Costa</b></sub></a> <a href="https://github.com/isabelycosta//"</a></td>
     <td align="center"><a href="https://github.com/cleitianne">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/29895488?v=4" width="100px;" alt=""/> <br /> <sub><b>Cleitianne</b></sub></a> <a href="https://github.com/cleitianne//"</a></td>
-    <td align="center"><a href="[https://github.com/cleitianne](https://github.com/karlaharyanna)">
-     <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/28715138?v=4" width="100px;" alt=""/> <br /> <sub><b>Karla Haryanna</b></sub></a> <a href="https://github.com/karlaharyanna//"</a></td>
+    <td align="center"><a href="https://github.com/karlaharyanna">
+     <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/28715138?v=4" width="100px;" alt=""/> <br /> <sub><b>Karla Haryanna</b></sub></a><a href="https://github.com/karlaharyanna//"</a></td>
   </tr>
   </tr>
 </table>
