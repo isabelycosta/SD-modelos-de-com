@@ -29,7 +29,7 @@ Projeto da disciplina de sistemas distribuídos tendo as seguintes implementaç�
   </tr>
 </table>
 
-<p align="center">
+
 ![Badge](https://img.shields.io/badge/Copyright-2022-%237159c1?style=for-the-badge&logo=ghost)
-</p>
+
 
