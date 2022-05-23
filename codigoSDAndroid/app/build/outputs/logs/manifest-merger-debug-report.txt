@@ -77,7 +77,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\IT
 activity#com.example.exemplomodelos_de_comunicacao.MainActivity
 ADDED from C:\Users\ITX Gamer\StudioProjects\SD-modelos-de-com\codigoSDAndroid\app\src\main\AndroidManifest.xml:13:9-19:20
 	android:name
-		ADDED from C:\Users\ITX Gamer\StudioProjects\SD-modelos-de-com\codigoSDAndroid\app\src\main\AndroidManifest.xml:13:19-47
+		ADDED from C:\Users\ITX Gamer\StudioProjects\SD-modelos-de-com\codigoSDAndroid\app\src\main\AndroidManifest.xml:13:19-46
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\ITX Gamer\StudioProjects\SD-modelos-de-com\codigoSDAndroid\app\src\main\AndroidManifest.xml:14:13-18:29
 action#android.intent.action.MAIN
