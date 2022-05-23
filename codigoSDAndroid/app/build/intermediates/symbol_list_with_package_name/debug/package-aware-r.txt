@@ -784,6 +784,7 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView
+id textView3
 id time
 id title
 id titleDividerNoCustom

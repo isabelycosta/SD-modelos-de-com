@@ -16,12 +16,12 @@
         "source": "C:\\Users\\ITX Gamer\\.gradle\\daemon\\7.3.3\\com.example.exemplomodelos_de_comunicacao.app-main-11:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\ITX Gamer\\.gradle\\daemon\\7.3.3\\com.example.exemplomodelos_de_comunicacao.app-merged_res-9:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\ITX Gamer\\.gradle\\daemon\\7.3.3\\com.example.exemplomodelos_de_comunicacao.app-main-11:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
         "merged": "C:\\Users\\ITX Gamer\\.gradle\\daemon\\7.3.3\\com.example.exemplomodelos_de_comunicacao.app-merged_res-9:\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\ITX Gamer\\.gradle\\daemon\\7.3.3\\com.example.exemplomodelos_de_comunicacao.app-main-11:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ITX Gamer\\.gradle\\daemon\\7.3.3\\com.example.exemplomodelos_de_comunicacao.app-merged_res-9:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\ITX Gamer\\.gradle\\daemon\\7.3.3\\com.example.exemplomodelos_de_comunicacao.app-main-11:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
         "merged": "C:\\Users\\ITX Gamer\\.gradle\\daemon\\7.3.3\\com.example.exemplomodelos_de_comunicacao.app-merged_res-9:\\layout_activity_main.xml.flat",
