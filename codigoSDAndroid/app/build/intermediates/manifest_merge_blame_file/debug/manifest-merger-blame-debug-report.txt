@@ -34,7 +34,7 @@
 22-->C:\Users\ITX Gamer\StudioProjects\SD-modelos-de-com\codigoSDAndroid\app\src\main\AndroidManifest.xml:11:9-40
 23        <activity android:name="com.example.exemplomodelos_de_comunicacao.MainActivity" >
 23-->C:\Users\ITX Gamer\StudioProjects\SD-modelos-de-com\codigoSDAndroid\app\src\main\AndroidManifest.xml:13:9-19:20
-23-->C:\Users\ITX Gamer\StudioProjects\SD-modelos-de-com\codigoSDAndroid\app\src\main\AndroidManifest.xml:13:19-47
+23-->C:\Users\ITX Gamer\StudioProjects\SD-modelos-de-com\codigoSDAndroid\app\src\main\AndroidManifest.xml:13:19-46
 24            <intent-filter>
 24-->C:\Users\ITX Gamer\StudioProjects\SD-modelos-de-com\codigoSDAndroid\app\src\main\AndroidManifest.xml:14:13-18:29
 25                <action android:name="android.intent.action.MAIN" />

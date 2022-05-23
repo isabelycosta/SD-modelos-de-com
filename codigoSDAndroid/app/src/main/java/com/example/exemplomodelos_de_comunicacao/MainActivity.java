@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
        // EditText numero2EditText= findViewById(R.id.num2);
 
         tv= findViewById(R.id.textView);
-        //tv2= findViewById(R.id.textView2);
+        tv2= findViewById(R.id.textView3);
 
         //String numero1String = numero1EditText.getText().toString();
         //String numero2String = numero2EditText.getText().toString();

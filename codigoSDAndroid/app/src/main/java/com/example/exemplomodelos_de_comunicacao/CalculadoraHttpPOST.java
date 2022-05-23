@@ -234,13 +234,7 @@ public class CalculadoraHttpPOST extends AsyncTask<Void, Void, String> {
                 }
 
                 return result;
-           // default:
-              //  System.out.println("Digite SOMENTE números entre 1 e 4");
-                //break;
         }
-
-
-        //Codigo
 
         return result;
     }

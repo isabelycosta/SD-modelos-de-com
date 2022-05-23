@@ -22,25 +22,25 @@ public class PrecisaCalcular {
     }
 
     public void calculoRemotoHTTPsoma(){
-        CalculadoraHttpPOST shs = new CalculadoraHttpPOST(this, "1", "15", "15");
+        CalculadoraHttpPOST shs = new CalculadoraHttpPOST(this, "1", "15", "10");
         shs.execute();
 
     }
 
     public void calculoRemotoHTTPsub(){
-        CalculadoraHttpPOST shs = new CalculadoraHttpPOST(this, "2", "15", "15");
+        CalculadoraHttpPOST shs = new CalculadoraHttpPOST(this, "2", "15", "10");
         shs.execute();
 
     }
 
     public void calculoRemotoHTTPmult(){
-        CalculadoraHttpPOST shs = new CalculadoraHttpPOST(this, "3", "15", "15");
+        CalculadoraHttpPOST shs = new CalculadoraHttpPOST(this, "3", "15", "10");
         shs.execute();
 
     }
 
     public void calculoRemotoHTTPdiv(){
-        CalculadoraHttpPOST shs = new CalculadoraHttpPOST(this, "4", "15", "15");
+        CalculadoraHttpPOST shs = new CalculadoraHttpPOST(this, "4", "15", "10");
         shs.execute();
 
     }
