@@ -35,7 +35,7 @@ public class CalculadoraHttpPOST extends AsyncTask<Void, Void, String> {
         this.oper1=oper1;
         this.oper2=oper2;
         this.pc=pc;
-        this.s=s;
+        this.s=s; //id da operação
 
     }
     @Override
@@ -63,7 +63,7 @@ public class CalculadoraHttpPOST extends AsyncTask<Void, Void, String> {
                     OutputStream os = conn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
                             new OutputStreamWriter(os, "UTF-8"));
-                    writer.write("oper1="+oper1+"&oper2="+oper2+"&operacao=1");
+                    writer.write("oper1="+oper1+"&oper2="+oper2+"&operacao=1"); //operação 1 = soma
                     writer.flush();
                     writer.close();
                     os.close();
@@ -111,7 +111,7 @@ public class CalculadoraHttpPOST extends AsyncTask<Void, Void, String> {
                     OutputStream os = conn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
                             new OutputStreamWriter(os, "UTF-8"));
-                    writer.write("oper1="+oper1+"&oper2="+oper2+"&operacao=2");
+                    writer.write("oper1="+oper1+"&oper2="+oper2+"&operacao=2"); //operação 2 = subtração
                     writer.flush();
                     writer.close();
                     os.close();
@@ -159,7 +159,7 @@ public class CalculadoraHttpPOST extends AsyncTask<Void, Void, String> {
                     OutputStream os = conn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
                             new OutputStreamWriter(os, "UTF-8"));
-                    writer.write("oper1="+oper1+"&oper2="+oper2+"&operacao=3");
+                    writer.write("oper1="+oper1+"&oper2="+oper2+"&operacao=3"); //operação 3 = dividir
                     writer.flush();
                     writer.close();
                     os.close();
@@ -206,7 +206,7 @@ public class CalculadoraHttpPOST extends AsyncTask<Void, Void, String> {
                     OutputStream os = conn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
                             new OutputStreamWriter(os, "UTF-8"));
-                    writer.write("oper1="+oper1+"&oper2="+oper2+"&operacao=4");
+                    writer.write("oper1="+oper1+"&oper2="+oper2+"&operacao=4"); //operação 3 = multiplicar
                     writer.flush();
                     writer.close();
                     os.close();

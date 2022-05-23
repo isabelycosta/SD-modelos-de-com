@@ -32,9 +32,8 @@ public class CalculadoraSocket extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... voids) {
         String result="";
-        Scanner s = new Scanner(System.in);
         //double oper1=10,oper2=20;
-        int operacao=1, operacaosub=2, operacaodiv=3, operacaomult=4 ; //somar
+        int operacao=1, operacaosub=2, operacaodiv=3, operacaomult=4 ;
         // 1 - somar, 2 - subtrair, 3- dividir e 4 - multiplicar
 
 
@@ -161,7 +160,6 @@ public class CalculadoraSocket extends AsyncTask<Void, Void, String> {
         return result;
     }
 
-
     @Override
 protected void onPreExecute() {
         //Codigo
@@ -170,7 +168,6 @@ protected void onPreExecute() {
 
 @Override
 protected void onPostExecute(String result) {
-        //Codigo
            if(this.tv!=null) {
                this.tv.setText(result);
            }else {
